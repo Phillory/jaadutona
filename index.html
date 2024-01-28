@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>
+        <!-- AJAX CLASS 1  -->
+        ajax(asynchrounous function) imp topic in jquery it is a technique used in web dev to send and recive data from a web server with out reloading the entire werb page jquery is a popular js library frame work & library #In jquery the AJAX is achived using
+        the $.ajax method or its short hand method such as $.get method , $.post method , $.JSON method theese method allow u to make http requests to a server and handel the responce asynchrounously! #SYNTAX FOR AJAX = $.ajax("it takes a parameter ,
+        object as a argument") for ex = $.ajax({ url : "http://google.com/api/getuser.php" }); => it will always take absolute path there aare 2 typ to send the data to the server (get and post)!
+
+        <!-- syntax for JSON DATa   -->
+        dataType = 'JSON' data : { name : 'aryan'; mob : '7999791878' }; success : function(data){ error : function (xml , status , error){ console.log(error); } }
+
+        <!-- the url through  which the AXAx   req is send  -->
+        TYPE = the http method to be use for the req such as GET, POST, PUT, PATCH, DELETE DATA TYPE = json , xml , html , script , text DATA = An obj containning key value pair of data to be send with the req it can be query parameter for GET requesr or the
+        request payload for POST request SUCCESS() = A call back func to be executed if the req is succeded it recieves the req from the server as the parameter , it may be the JSON data or xml what ever is expected ERROR() = a call back function to bbe
+        executed if the req i
+
+
+        <!-- jquery basics =  cdn link ,   if the  doc is ready then  code wll execute  , $(function(){}) -->
+        <div class="demo">HELLO</div>
+        <div class="demo">HELLO</div>
+        EACH FUNCTION = ex = $("demo")each (function(){document.write($(this).text()+"\n");}) TRIGGERs = triggers event on an event (it triggrs an event) trigger example syntax = $("we have to select the btn here for trigger event").trigger('click') = in this
+        all the btn event will be triggered NO CONFLICT = exemple = var aryan = $.noConflict(); = now we can use this aryan variable as a $ [it is used for ignoring conflict]
+        <!-- selector group -->
+        SELECTOR = $"*" all eelements $p demoClass the first p element , p span it is a decandent ( means p until child) , p + span (means adjecent) $("*") // all elements $("p.demo") //
+        <p> elements with class="demo" $("p:first") // the first
+            <p> element $("p span") // span, descendant of p $("p > span") // span, direct child of p $("p + span") // span immediately proceeded by a p $("p ~ span") // strong element proceeded by p $("ul li:first") // the first
+                <li> element of the first
+                    <ul>
+                        $("ul li:first-child") // the first
+                        <li> element of every
+                            <ul>
+                                $("ul li:nth-child(3)") // third child $("[href]") // any element with an href attribute $("a[target='_blank']") // <a> elements with a target "_blank" attribute
+$("a[target!='_blank']")    // <a> elements with a target attribute value other than "_blank"
+$(":input")                 // all form elements
+$(":button")                // <button> and <input> elements of type="button"
+$("tr:even")                // even <tr> elements
+$("tr:odd")                 // odd <tr> elements
+$("span:parent")            // element which has child element
+$("span:contains('demo')")  // element conaining the specified text 
+
+<!-- Actions -->
+$(selector).action()
+$(this).hide()      // the current element
+$("div").hide()     // all <div> elements
+$(".demo").hide()   // all elements with class="demo"
+$("#demo").hide()   // the element with id="demo"
+
+<!-- Events -->
+$(".demo").click(function(){
+$(this).hide(200);
+});
+Mouse
+scroll, click, dblclick, mousedown, mouseup, mousemove, mouseover, mouseout, mouseenter, mouseleave, load, resize, scroll, unload, error
+Keyboard
+keydown, keypress, keyup
+Form
+submit, change, focus, blur
+DOM Element
+blur, focus, focusin, focusout, change, select, submit
+Browser
+load, resize, scroll, unload, error
+.bind()
+$(document).ready(function() {              // attach a handler to an event for the elements        
+$("#demo").bind('blur', function(e) {
+	//dom event fired
+});
+})
+
+<!-- Traversing -->
+$("#demo").parent();                // accessing direct parent
+$("span").parent().hide();          // changing parent color
+$("#demo").parents();               // all ancestors of the element
+$("#demo").parentsUntil("#demo2");  // all ancestors between two - demo is inside demo2
+$("#demo").children();              // all direct children
+$("#demo").children(".first");      // all direct children having a specified class
+$("#demo").find("span");            // all span elements inside #demo
+$("#demo").find("*");               // all descendants
+$("#demo").siblings("span");        // span siblings of #demo
+$("#demo").next();                  // the next sibling
+$("p").nextAll();                   // all next siblings
+$("#demo").nextUntil("#demo2");     // siblings between two arguments
+$("#demo").prev();                  // the previous sibling
+$("p").prevAll();                   // all previous siblings
+$("#demo").prevUntil("#demo2");     // previous siblings between
+
+</p>
+<script>
+    console.log("hello")
+</script>
+<p>
+    string  - represent a  sequence of character  , thy are closed in single  quotes  and double quotes  ,  boolean  itt gives  either true or fase  , array = it represent aa  order of collection of  elemetts  each  order if  array  can be  any data type,, here  homogenius and hetro genues data are presrnt   , 
+    OBJ =  representation of  instance of a class , object   conttainds  properties  (var , methods (funtions that  define there behavior)) 
+    null = var with  no value  oor an  uninitialised   variable 
+    resources =  it represents data conn and file handling , thret aare  created and managed by function provided by php extension 
+    calllable  it  is  var  that called like a function ,  this include regular function ,closure function  and method  of an object . 
+     that  how thw variable is declared in php  = $variable
+
+     echo and print are used to  output the strings  or value   or to outpt stre  am  they searve the same  purpose of t= dispaing text  and  they have aa  minnor diff in terms of use and behaviour   ,
+
+     echo is a  regular function  in this we dont  need to use  brackets 
+echo is a lang cons tructor  iu  dont need to use ()
+unless u are parsig multiple para meter
+ echo can  outpur only  one parameter  whiw using brackets ,  and without () we can only pass one para,either  and for  using  thi multipple  para metere we have to uswe echo as a variable
+
+ we can aLSO USE   double $$ it i also valid  ,  hense it is known as a pointer 
+
+syntax= 
+<?php   
+echo "it is how text i displayed"
+?>
+
+global varible  can not b directly  access  but we can access  by using global keyword or  super  global global variable . 
+for ()
+</p>
+</body>
+</html>
