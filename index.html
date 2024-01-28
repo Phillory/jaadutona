@@ -4,122 +4,457 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>Jaadu Tona Movie Download Website</title>
 </head>
 
 <body>
 
-    <p>
-        <!-- AJAX CLASS 1  -->
-        ajax(asynchrounous function) imp topic in jquery it is a technique used in web dev to send and recive data from a web server with out reloading the entire werb page jquery is a popular js library frame work & library #In jquery the AJAX is achived using
-        the $.ajax method or its short hand method such as $.get method , $.post method , $.JSON method theese method allow u to make http requests to a server and handel the responce asynchrounously! #SYNTAX FOR AJAX = $.ajax("it takes a parameter ,
-        object as a argument") for ex = $.ajax({ url : "http://google.com/api/getuser.php" }); => it will always take absolute path there aare 2 typ to send the data to the server (get and post)!
-
-        <!-- syntax for JSON DATa   -->
-        dataType = 'JSON' data : { name : 'aryan'; mob : '7999791878' }; success : function(data){ error : function (xml , status , error){ console.log(error); } }
-
-        <!-- the url through  which the AXAx   req is send  -->
-        TYPE = the http method to be use for the req such as GET, POST, PUT, PATCH, DELETE DATA TYPE = json , xml , html , script , text DATA = An obj containning key value pair of data to be send with the req it can be query parameter for GET requesr or the
-        request payload for POST request SUCCESS() = A call back func to be executed if the req is succeded it recieves the req from the server as the parameter , it may be the JSON data or xml what ever is expected ERROR() = a call back function to bbe
-        executed if the req i
+    <header>
 
 
-        <!-- jquery basics =  cdn link ,   if the  doc is ready then  code wll execute  , $(function(){}) -->
-        <div class="demo">HELLO</div>
-        <div class="demo">HELLO</div>
-        EACH FUNCTION = ex = $("demo")each (function(){document.write($(this).text()+"\n");}) TRIGGERs = triggers event on an event (it triggrs an event) trigger example syntax = $("we have to select the btn here for trigger event").trigger('click') = in this
-        all the btn event will be triggered NO CONFLICT = exemple = var aryan = $.noConflict(); = now we can use this aryan variable as a $ [it is used for ignoring conflict]
-        <!-- selector group -->
-        SELECTOR = $"*" all eelements $p demoClass the first p element , p span it is a decandent ( means p until child) , p + span (means adjecent) $("*") // all elements $("p.demo") //
-        <p> elements with class="demo" $("p:first") // the first
-            <p> element $("p span") // span, descendant of p $("p > span") // span, direct child of p $("p + span") // span immediately proceeded by a p $("p ~ span") // strong element proceeded by p $("ul li:first") // the first
-                <li> element of the first
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">JAADU-TONA</a>
+            <div class="searchbar">
+                <div class="searchbar-wrapper">
+                    <div class="searchbar-left">
+                        <div class="search-icon-wrapper">
+                            <span class="search-icon searchbar-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                            </path>
+                        </svg>
+                    </span>
+                        </div>
+                    </div>
+
+                    <div class="searchbar-center">
+                        <div class="searchbar-input-spacer"></div>
+
+                        <input type="text" class="searchbar-input" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" title="Search" role="combobox" placeholder="Search Google">
+                    </div>
+
+                    <div class="searchbar-right">
+                        <svg class="voice-search" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="#4285f4" d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z">
+                    </path>
+                    <path fill="#34a853" d="m11 18.08h2v3.92h-2z"></path>
+                    <path fill="#fbbc05" d="m7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45 0.56 2.42 1.47 3.38v0.32l-1.15 1.18z">
+                    </path>
+                    <path fill="#ea4335" d="m12 16.93a4.97 5.25 0 0 1 -3.54 -1.55l-1.41 1.49c1.26 1.34 3.02 2.13 4.95 2.13 3.87 0 6.99-2.92 6.99-7h-1.99c0 2.92-2.24 4.93-5 4.93z">
+                    </path>
+                </svg>
+                    </div>
+                </div>
+            </div>
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TV Shows</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Genres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="https://dotlinks.fun/thcmvj000350054/?token=MjRqaStKZyt4L0M2dWVWSHljVEFYbUtvdjN3ZjZEdHoxaTU0U2poTWsrcTUwdHZrc0xWY3pxaUhSYW1abk00TTQ4MzladUxtU2ZsaEVYTkZKNS9la0NKd1ZHVTlKWjMxcTN6SU1ybEV4OUQ3a3lPTWdPYWE4TnRvV0N6aUthUTUzazZzTmRuRzRZajN5NkR2T3hOU29pOEdENitnQlRudVVvekFqVy91cmZjOGJvNjhZUzZXQ3VuZG1FWGRSenJSMDdJaE44L3pYWjZEcVFHOUhNOWlha0NvUUdxaVFnT1BKQXMveFk5SFEyR0pQL096TUE3cHZRN0lpaTROR2tvQ0M2MWtBZVZqUnI1SXJDN094ZlNJZzBOcW9hSnJGRW93SjVIdS9DUWxlMXhpRi9LZXpDM2lLUVZkM0hEaWhreHg4UUEvZzMyRUpHMHhaeFpBTTFady9BPT0=">
+                        <img src="/WEBDEV/1.png" class="card-img-top" alt="Movie 1"> </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Movie 1</h5>
+                        <button> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href=""> <img src="/WEBDEV/2.png" class="card-img-top" alt="Movie 2"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 2</h5>
+                        <button> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- yaha se -->
+            <div class="col-md-4">
+                <div class="card">
+                    <a href=""><img src="/WEBDEV/3.jpg" class="card-img-top" alt="Movie 3"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title </h5>
+                        <button> Download
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Add more movie cards as needed -->
+        </div>
+    </div>
+
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod commodo lorem, a condimentum odio ultricies vel.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Quick Links</h3>
                     <ul>
-                        $("ul li:first-child") // the first
-                        <li> element of every
-                            <ul>
-                                $("ul li:nth-child(3)") // third child $("[href]") // any element with an href attribute $("a[target='_blank']") // <a> elements with a target "_blank" attribute
-$("a[target!='_blank']")    // <a> elements with a target attribute value other than "_blank"
-$(":input")                 // all form elements
-$(":button")                // <button> and <input> elements of type="button"
-$("tr:even")                // even <tr> elements
-$("tr:odd")                 // odd <tr> elements
-$("span:parent")            // element which has child element
-$("span:contains('demo')")  // element conaining the specified text 
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Movies</a></li>
+                        <li><a href="#">TV Shows</a></li>
+                        <li><a href="#">Genres</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contact Us</h3>
+                    <form action="#">
+                        <input type="email" name="email" class="form-control mb-2" placeholder="Your email address...">
+                        <textarea name="message" class="form-control mb-2" placeholder="Your message..."></textarea>
 
-<!-- Actions -->
-$(selector).action()
-$(this).hide()      // the current element
-$("div").hide()     // all <div> elements
-$(".demo").hide()   // all elements with class="demo"
-$("#demo").hide()   // the element with id="demo"
+                        <input type="button" class="btn btn-primary btn-block" placeholder="send">
+                        <!-- <button type="submit" class="btn btn-primary btn-block"> 
+                         <i class="fas fa-envelope"></i> </button> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom bg-dark text-white py-2">
+            <div class="container text-center">
+                &copy; 2024 JaaduTona | Designed by JaaduTona
+            </div>
+        </div>
+    </footer>
 
-<!-- Events -->
-$(".demo").click(function(){
-$(this).hide(200);
-});
-Mouse
-scroll, click, dblclick, mousedown, mouseup, mousemove, mouseover, mouseout, mouseenter, mouseleave, load, resize, scroll, unload, error
-Keyboard
-keydown, keypress, keyup
-Form
-submit, change, focus, blur
-DOM Element
-blur, focus, focusin, focusout, change, select, submit
-Browser
-load, resize, scroll, unload, error
-.bind()
-$(document).ready(function() {              // attach a handler to an event for the elements        
-$("#demo").bind('blur', function(e) {
-	//dom event fired
-});
-})
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
 
-<!-- Traversing -->
-$("#demo").parent();                // accessing direct parent
-$("span").parent().hide();          // changing parent color
-$("#demo").parents();               // all ancestors of the element
-$("#demo").parentsUntil("#demo2");  // all ancestors between two - demo is inside demo2
-$("#demo").children();              // all direct children
-$("#demo").children(".first");      // all direct children having a specified class
-$("#demo").find("span");            // all span elements inside #demo
-$("#demo").find("*");               // all descendants
-$("#demo").siblings("span");        // span siblings of #demo
-$("#demo").next();                  // the next sibling
-$("p").nextAll();                   // all next siblings
-$("#demo").nextUntil("#demo2");     // siblings between two arguments
-$("#demo").prev();                  // the previous sibling
-$("p").prevAll();                   // all previous siblings
-$("#demo").prevUntil("#demo2");     // previous siblings between
-
-</p>
-<script>
-    console.log("hello")
-</script>
-<p>
-    string  - represent a  sequence of character  , thy are closed in single  quotes  and double quotes  ,  boolean  itt gives  either true or fase  , array = it represent aa  order of collection of  elemetts  each  order if  array  can be  any data type,, here  homogenius and hetro genues data are presrnt   , 
-    OBJ =  representation of  instance of a class , object   conttainds  properties  (var , methods (funtions that  define there behavior)) 
-    null = var with  no value  oor an  uninitialised   variable 
-    resources =  it represents data conn and file handling , thret aare  created and managed by function provided by php extension 
-    calllable  it  is  var  that called like a function ,  this include regular function ,closure function  and method  of an object . 
-     that  how thw variable is declared in php  = $variable
-
-     echo and print are used to  output the strings  or value   or to outpt stre  am  they searve the same  purpose of t= dispaing text  and  they have aa  minnor diff in terms of use and behaviour   ,
-
-     echo is a  regular function  in this we dont  need to use  brackets 
-echo is a lang cons tructor  iu  dont need to use ()
-unless u are parsig multiple para meter
- echo can  outpur only  one parameter  whiw using brackets ,  and without () we can only pass one para,either  and for  using  thi multipple  para metere we have to uswe echo as a variable
-
- we can aLSO USE   double $$ it i also valid  ,  hense it is known as a pointer 
-
-syntax= 
-<?php   
-echo "it is how text i displayed"
-?>
-
-global varible  can not b directly  access  but we can access  by using global keyword or  super  global global variable . 
-for ()
-</p>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+        
+        .nav-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-right: 20px;
+        }
+        
+        .nav-links li:last-child {
+            margin-right: 0;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-section {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #ffcc00;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: none;
+        }
+        
+        .contact-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ffcc00;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        .footer-bottom {
+            background-color: #222;
+            padding: 10px 0;
+            text-align: center;
+        }
+        /* Previous CSS styles for header and footer (from previous responses) */
+        
+        .movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        
+        .movie-card {
+            width: 200px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .movie-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .movie-card h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        
+        button {
+            padding: 15px 25px;
+            border: unset;
+            border-radius: 15px;
+            color: #212121;
+            z-index: 1;
+            background: #e8e8e8;
+            position: relative;
+            font-weight: 1000;
+            font-size: 17px;
+            -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+            box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+            transition: all 250ms;
+            overflow: hidden;
+        }
+        
+        button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 15px;
+            background-color: #212121;
+            z-index: -1;
+            -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+            box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+            transition: all 250ms
+        }
+        
+        button:hover {
+            color: #e8e8e8;
+        }
+        
+        button:hover::before {
+            width: 100%;
+        }
+        
+        .searchbar {
+            font-size: 14px;
+            font-family: arial, sans-serif;
+            color: #202124;
+            display: flex;
+            z-index: 3;
+            height: 44px;
+            background: white;
+            border: 1px solid #dfe1e5;
+            box-shadow: none;
+            border-radius: 24px;
+            margin: 0 auto;
+            width: auto;
+            max-width: 224px;
+        }
+        
+        .searchbar:hover {
+            box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+            border-color: rgba(223, 225, 229, 0);
+        }
+        
+        .searchbar-wrapper {
+            flex: 1;
+            display: flex;
+            padding: 5px 8px 0 14px;
+        }
+        
+        .searchbar-left {
+            font-size: 14px;
+            font-family: arial, sans-serif;
+            color: #202124;
+            display: flex;
+            align-items: center;
+            padding-right: 13px;
+            margin-top: -5px;
+        }
+        
+        .search-icon-wrapper {
+            margin: auto;
+        }
+        
+        .search-icon {
+            margin-top: 3px;
+            color: #9aa0a6;
+            height: 20px;
+            line-height: 20px;
+            width: 20px;
+        }
+        
+        .searchbar-icon {
+            display: inline-block;
+            fill: currentColor;
+            height: 24px;
+            line-height: 24px;
+            position: relative;
+            width: 24px;
+        }
+        
+        .searchbar-center {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+        }
+        
+        .searchbar-input-spacer {
+            color: transparent;
+            flex: 100%;
+            white-space: pre;
+            height: 34px;
+            font-size: 16px;
+        }
+        
+        .searchbar-input {
+            background-color: transparent;
+            border: none;
+            margin: 0;
+            padding: 0;
+            color: rgba(0, 0, 0, .87);
+            word-wrap: break-word;
+            outline: none;
+            display: flex;
+            flex: 100%;
+            margin-top: -37px;
+            height: 34px;
+            font-size: 16px;
+            max-width: 100%;
+            width: 100%;
+        }
+        
+        .searchbar-right {
+            display: flex;
+            flex: 0 0 auto;
+            margin-top: -5px;
+            align-items: stretch;
+            flex-direction: row
+        }
+        
+        .searchbar-clear-icon {
+            margin-right: 12px
+        }
+        
+        .voice-search {
+            flex: 1 0 auto;
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            border: 0;
+            background: transparent;
+            outline: none;
+            padding: 0 8px;
+            width: 2.8em;
+        }
+    </style>
 </body>
+
 </html>
