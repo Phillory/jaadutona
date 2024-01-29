@@ -129,6 +129,23 @@
             </div>
         </div>
 
+        <!-- Movie Card Container -->
+<div class="movie-card">
+    <!-- Movie Image -->
+    <img src="https://i.pinimg.com/564x/bf/70/5e/bf705e5bf8dcc84f83141c7e7f0e3265.jpg">
+
+    <!-- Movie Details Container -->
+    <div class="movie-details">
+        <!-- Movie Title -->
+        <h2 class="movie-title">Movie Title</h2>
+
+        <!-- Movie Description -->
+        <p class="movie-description">A brief description of the movie...</p>
+
+        <!-- Watch Now Button -->
+        <a href="movie_link" class="btn btn-primary">Watch Now</a>
+    </div>
+</div>
         <!-- ______________________________________________________________________________ -->
 
         <!-- <div class="col-md-4"> -->
@@ -202,6 +219,59 @@
         <script src="scripts.js"></script>
 
         <style>
+            /* Movie Card Styles */
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Movie Image Styles */
+.movie-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Movie Details Styles */
+.movie-details {
+    text-align: center;
+}
+
+/* Movie Title Styles */
+.movie-title {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+/* Movie Description Styles */
+.movie-description {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Watch Now Button Styles */
+.btn-primary {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+<!-- ______________________________________________________________________________ -->
+
+            
             body {
                 margin: 0;
                 font-family: Arial, sans-serif;
